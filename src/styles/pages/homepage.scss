@@ -1,8 +1,8 @@
 @use '../base';
 
 .homepage {
-    background: var(--color-primary) url('/images/astro-background.webp') no-repeat center center;
-    background-size: 175%;
+    background: var(--color-primary) url('/images/claudebg.png') no-repeat center center;
+    background-size: max(175%, 1100px);
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -23,8 +23,14 @@
             line-height: 1.1;
         }
 
+        h2 {
+            color: var(--color-white);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
         p {
-            color: var(--color-light);
+            color: var(--color-white);
 
             &:not(.docs) {
                 max-width: 300px;
