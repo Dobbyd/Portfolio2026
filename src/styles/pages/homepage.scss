@@ -1,0 +1,47 @@
+@use '../base';
+
+.homepage {
+    background: var(--color-primary) url('/images/astro-background.webp') no-repeat center center;
+    background-size: 175%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    main > .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: calc(100vh - 164px);
+
+        h1 {
+            margin-bottom: 2rem;
+            max-width: 800px;
+            font-size: 52px;
+            color: var(--color-white);
+            line-height: 1.1;
+        }
+
+        p {
+            color: var(--color-light);
+
+            &:not(.docs) {
+                max-width: 300px;
+            }
+
+            &.docs {
+                margin-top: 18rem;
+
+                a {
+                    color: var(--color-white);
+                    font-weight: 700;
+                    
+                    &:not(:hover) {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

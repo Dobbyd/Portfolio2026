@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+@use 'components/layout/header';
+@use 'components/layout/footer';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-inter); 
+}
+
+h1, h2, h3 {
+    font-family: var(--font-obviously);
+}
+
+.container {
+    padding: 0;
+    position: relative;
+    margin: 0 var(--container-margin);
+    max-width: var(--container-max-width);
+}

@@ -1,0 +1,63 @@
+@use 'sass:map';
+
+// BREAKPOINTS
+
+$breakpoints: (
+    xxxl: 1920px,
+    xxl: 1500px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px,
+);
+
+@mixin above($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint: map.get($breakpoints, $breakpoint);
+    }
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin below($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint: map.get($breakpoints, $breakpoint) - 0.02;
+    } @else {
+        $breakpoint: $breakpoint - 0.02;
+    }
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin between($min, $max) {
+    @if map.has-key($breakpoints, $min) {
+        $min: map.get($breakpoints, $min);
+    }
+    @if map.has-key($breakpoints, $max) {
+        $max: map.get($breakpoints, $max);
+    }
+    @media (min-width: $min) and (max-width: $max - 0.02) {
+        @content;
+    }
+}
+
+// @mixin scrollbar() {
+//     &::-webkit-scrollbar {
+//         -webkit-appearance: none;
+//         width: 8px;
+//         height: 8px;
+//     }
+
+//     &::-webkit-scrollbar-track {
+//         background: var(--color-gray);
+//         border-radius: var(--radius-sm);
+//     }
+
+//     &::-webkit-scrollbar-thumb {
+//         cursor: pointer;
+//         background: var(--color-gray-dark);
+//         border-radius: var(--radius-sm);
+//     }
+// }

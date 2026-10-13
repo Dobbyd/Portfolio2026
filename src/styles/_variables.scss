@@ -1,0 +1,26 @@
+@use 'fonts';
+@use 'mixins' as *;
+@forward 'mixins';
+
+:root {
+    // Colors
+    --color-primary: #060914;
+    --color-white: #fff;
+    --color-light: #bfc1c9;
+    
+    // Fonts
+    --font-obviously: "Obviously", Arial, Helvetica, sans-serif;
+    --font-inter: "Inter", Arial, Helvetica, sans-serif;
+
+    // Container
+    --container-max-width: 1200px;
+    --container-margin: calc((100vw - var(--container-max-width)) / 2);
+
+    @include below(1305px) {
+        --container-margin: 4vw;
+    }
+
+    @include below(md) {
+        --container-margin: 6vw;
+    }
+}

@@ -1,0 +1,28 @@
+.header {
+    height: 80px;
+    width: 100vw;
+    background-color: #0d0f144d;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: .5rem;
+        
+        a {
+            display: block;
+
+            img {
+                height: 75px;
+            }
+        }
+
+        p {
+            color: var(--color-white);
+            font-family: var(--font-obviously);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+    }
+}
